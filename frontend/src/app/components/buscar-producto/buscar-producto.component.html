@@ -1,0 +1,53 @@
+<div class="cont">
+  <div class="cont_tarjeta">
+    <div class="tarjeta">
+
+
+      <div class="main">
+        <!-- Tabla de productos -->
+        <div class="cont_tabla">
+          <app-tabla
+            [boton]="false"
+            [columnas]="columnas"
+            [datos]="datos"
+            class="tabla">
+          </app-tabla>
+        </div>
+
+        <!-- Filtros de búsqueda -->
+        <div class="cont_info">
+          <div class="cont_TITULO">
+            <p>Buscar por:</p>
+          </div>
+            <label>
+            Codigo:
+            <input type="text" [(ngModel)]="codigoBuscar" placeholder="Codigo del producto">
+          </label>
+          <label>
+            Nombre:
+            <input type="text" [(ngModel)]="nombreFiltro" placeholder="Nombre del producto">
+          </label>
+
+          <label>
+            Marca:
+            <input type="text" [(ngModel)]="marcaFiltro" placeholder="Marca">
+          </label>
+
+          <label>
+            Seleccionar Categoría:
+            <select [(ngModel)]="idCategoriaSeleccionada">
+              <option [value]="null">Todas</option>
+              <option *ngFor="let cat of categorias" [value]="cat.id">
+                {{ cat.nombre }}
+              </option>
+            </select>
+          </label>
+
+          <div class="cont_boton">
+            <button (click)="buscarProductos()">Buscar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

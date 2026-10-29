@@ -1,0 +1,16 @@
+<div class="cont">
+    <div class="cont_menu_lateral">
+        <div class="cont_logo_menu_lat">
+            <p>sistema de stock</p>
+        </div>
+<div class="cont_boton_menu_lat" *ngFor="let i of opcionesMenu">
+    <button (click)="ir(i.url)" [ngClass]="{'activo': seleccionado === i.url}">
+        {{i.texto}}
+    </button>
+</div>
+
+    </div>
+    <div class="cont_subcomp">
+        <router-outlet></router-outlet>
+    </div>
+</div>

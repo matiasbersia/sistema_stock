@@ -1,0 +1,201 @@
+/* Contenedor principal */
+.cont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(204, 202, 202);
+}
+
+/* Labels */
+label {
+    font-size: 20px;
+}
+
+/* Navegación de entrada de código y cantidad */
+.cont_nav {
+    height: 7%;
+}
+.nav {
+    background-color: rgb(75, 75, 75);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    border-bottom: 2px solid black;
+    color: white;
+    text-shadow: 2px 1px 1px black;
+    padding-left: 20px;
+}
+.cont_codigo{
+    display: flex;
+
+    align-items: center;
+    height: 100%;
+    width: 70%;
+    gap: 20px;
+}
+.cont_codigo button{
+    margin-left: -20px;
+    margin-top: 3.5px;
+}
+.cont_boton_nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+}
+.cont_boton_nav button{
+    width: 80%;
+    height: 70%;
+    margin-right: 20px;
+}
+/* Contenedor de la tabla */
+.cont_tabla {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto; /* Scroll si hay muchas columnas */
+}
+
+/* Tabla */
+.tabla {
+    width: 80%;
+    height: auto;
+    border-collapse: collapse;
+    
+}
+
+
+/* Celdas y encabezados */
+th, td {
+    background-color: white;
+    border: 2px solid black;
+    padding: 7px 5px;
+    text-align: center;
+}
+
+/* Encabezados */
+th {
+    color: white;
+    text-shadow: 2px 1px 1px black;
+    background-color: #4671bb;
+}
+.tabla_b_x{
+    background-color: rgb(244, 77, 77);
+    color: white;
+    text-shadow: 2px 1px 1px black;
+    border-radius: 4px;
+    width: 40%;
+    height: 60%;
+}
+
+
+
+.cont_otro_producto{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    width: 79.9%;
+    height: 92.79%;
+    background-color: azure;
+    position: absolute;
+    top: 60px;
+}
+.otro_producto{
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    height: 80%;
+    background-color: #658dd0;
+    border: 2px solid black;
+}
+.cont_input{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    
+}
+.cont_input label{
+    display: flex;
+    flex-direction: column;
+    padding: 5% 5%;
+    width: 80%;
+    color: white;
+    text-shadow: 2px 1px 1px black;
+}
+.cont_input label input{
+    height: 25px;
+}
+.cont_botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 20%;
+}
+.cont_botones button{
+    width: 40%;
+    height: 12%;
+}
+
+
+
+
+
+/* Contenedor de info y totales */
+.cont_info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: auto;
+    background-color: #4671bb;
+    padding: 5px 0px;
+    border-radius: 20px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.25);
+}
+
+/* Totales */
+.cont_total {
+    display: flex;
+    padding-left: 5%;
+    align-items: center;
+    width: 60%;
+}
+.cont_total p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    height: 70px;
+    background-color: white;
+    border: 2px solid black;
+}
+.total {
+    font-size: 30px;
+}
+.numero {
+    margin-left: 2%;
+    font-size: 30px;
+}
+
+/* Botones de acción */
+.cont_boton {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 75%;
+}
+.cont_boton button {
+    width: 30%;
+    height: 80%;
+    font-size: 25px;
+}

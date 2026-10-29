@@ -1,0 +1,161 @@
+.cont{
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+.cont_nav{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 30px;
+
+}
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 95%;
+    padding: 5px 0px;
+    gap: 2%;
+}
+.nav button{
+    width: 20%;
+    height: 50px;
+    font-size: 20px;
+    background-color: #6690d8 ;
+    color: white;
+    text-shadow: 2px 1px 1px rgb(0, 0, 0);
+    border-radius: 20px;
+    z-index: 100;
+}
+.nav button:hover{
+    scale: 1.1;
+}   
+
+.nav button.activo {
+    background-color: #efefef;
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 1px rgb(255, 255, 255);
+}
+.cont_cargar{
+    width: 50%;
+    height: 100%;
+
+}
+.cargar{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
+
+}
+.cargar label {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5% 0px;
+  padding-left: 20px;
+  padding-right: 30%;
+}
+
+
+.cargar label input.inp {
+  width: 50%;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+
+.cargar label .cont_input .int_boton {
+  width: 80%;
+  margin: 0;
+  padding: 0;
+}
+.cargar label .cont_input {
+    width: 50%;
+    height: 25px;
+    display: flex;
+    
+}
+
+
+.cont_input button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.cont_botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+.cont_botones button{
+    width: 80%;
+}
+
+.cont_tabla_categoria {
+    width: 45%;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-x: auto; 
+    display: flex;
+    justify-content: center;
+
+}
+
+.tabla_categoria{
+    width: 90%;
+}
+/* Tabla */
+.tabla_categoria table {
+    width: 100%; /* ocupa todo el contenedor */
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* Encabezados */
+.tabla_categoria th {
+    background-color: #658dd0;
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Celdas */
+.tabla_categoria td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+/* Filas alternadas */
+.tabla_categoria tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Botones dentro de la tabla */
+.tabla_categoria button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.tabla_categoria button:hover {
+    background-color: #c0392b;
+}
+
+/* Mensaje de "No hay categorías" centrado */
+.tabla_categoria td[colspan="3"] {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+

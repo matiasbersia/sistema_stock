@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0px;
+}
+p, label, button, option,th,td{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}

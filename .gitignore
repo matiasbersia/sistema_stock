@@ -1,0 +1,28 @@
+@'
+# Dependencias
+node_modules/
+
+# Archivos compilados
+dist/
+.angular/
+tmp/
+out-tsc/
+
+# Variables de entorno y credenciales
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+
+# Editores
+.idea/
+.vscode/
+.history/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+'@ | Set-Content -Encoding utf8 .gitignore

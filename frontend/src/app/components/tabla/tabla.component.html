@@ -1,0 +1,39 @@
+<div class="cont_table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th *ngFor="let col of columnas">{{ col }}</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let dat of datos | slice:0:filas">
+                <td *ngFor="let col of columnas">
+
+                    <!-- Si la columna es 'detalles', mostrar botón -->
+                    <ng-container *ngIf="col === 'detalles'; else normalCell">
+                        <button class="btn_detalles" (click)="verDetalles(dat)">
+                            Ver detalles
+                        </button>
+                    </ng-container>
+
+                    <!-- Celda normal -->
+                    <ng-template #normalCell>
+                        {{ dat[col] }}
+                    </ng-template>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="cont_boton" *ngIf="boton">
+    <button class="b_mas" (click)="mostrar()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrows-sort">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 9l4 -4l4 4m-4 -4v14" />
+            <path d="M21 15l-4 4l-4 -4m4 4v-14" />
+        </svg>
+    </button>
+</div>

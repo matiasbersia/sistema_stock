@@ -1,0 +1,103 @@
+<div class="cont">
+
+  <!-- Entrada de código y cantidad -->
+  <div class="cont_nav">
+    <div class="nav">
+      <div class="cont_codigo">
+        <label>
+          Código de barras:
+          <input
+            type="text"
+            #codigo
+            [(ngModel)]="codigoBuscar"
+            (keydown.enter)="cargarProductoPorCodigo()"
+            autofocus
+          >
+        </label>
+
+        <label>
+          Cantidad:
+          <input type="number" min="1" [(ngModel)]="cantidad">
+        </label>
+
+        <button (click)="cargarProductoPorCodigo()">Aceptar</button>
+      </div>
+
+      <div class="cont_boton_nav">
+        <button (click)="menu_otro_producto()">Añadir otro producto</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla de venta -->
+  <div class="cont_tabla">
+    <table class="tabla">
+      <thead class="cont_titulos">
+        <tr class="titulos">
+          <th *ngFor="let titulo of columnas_titulos">{{ titulo }}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let fila of datos">
+          <td>{{ fila.codigo }}</td>
+          <td>{{ fila.nombre }}</td>
+          <td>{{ fila.marca }}</td>
+          <td>{{ fila.caracteristica }}</td>
+          <td>{{ fila.precio | currency:'USD':'symbol':'1.2-2' }}</td>
+          <td>
+            <button (click)="decrement(fila)">-</button>
+            <span>{{ fila.cantidad }}</span>
+            <button (click)="increment(fila)">+</button>
+          </td>
+          <td>
+            <button (click)="borrar(fila)" class="tabla_b_x">X</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Formulario otro producto -->
+  <div class="cont_otro_producto" *ngIf="estado_otro_p">
+    <div class="otro_producto">
+      <div class="cont_input">
+        <label>
+          Nombre:
+          <input type="text" [(ngModel)]="nuevoProducto.nombre" placeholder="nombre del producto">
+        </label>
+        <label>
+          Característica:
+          <input type="text" [(ngModel)]="nuevoProducto.caracteristica" placeholder="tamaño/peso/talle/etc.">
+        </label>
+        <label>
+          Precio Total:
+          <input type="number" [(ngModel)]="nuevoProducto.precio">
+        </label>
+        <label>
+          Descripción:
+          <textarea rows="3" [(ngModel)]="nuevoProducto.descripcion" placeholder="(opcional)"></textarea>
+        </label>
+      </div>
+
+      <div class="cont_botones">
+        <button (click)="cancelarNuevoProducto()">Cancelar</button>
+        <button (click)="aceptarNuevoProducto()">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Totales -->
+  <div class="cont_info">
+    <div class="cont_total">
+      <p class="total">TOTAL PRECIO:</p>
+      <p class="numero">{{ totalPrecio() | currency:'USD':'symbol':'1.2-2' }}</p>
+    </div>
+
+    <div class="cont_boton">
+      <button (click)="cancelarVenta()">Cancelar</button>
+      <button (click)="finalizarVenta()">Aceptar</button>
+    </div>
+  </div>
+
+</div>

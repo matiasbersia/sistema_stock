@@ -1,0 +1,32 @@
+<div class="cont_tabla">
+  <table class="tabla">
+    <thead class="cont_titulos">
+      <tr class="titulos">
+        <th *ngFor="let titulo of columnas_titulos">
+          {{ titulo }}
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let fila of datos">
+
+        <!-- respeta el orden del objeto -->
+        <td *ngFor="let col of columnas">
+          {{ fila[col] }}
+        </td>
+
+        <td>
+          <button (click)="decrement(fila)">-</button>
+          <span>{{ fila.cantidad }}</span>
+          <button (click)="increment(fila)">+</button>
+        </td>
+
+        <td>
+          <button>X</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

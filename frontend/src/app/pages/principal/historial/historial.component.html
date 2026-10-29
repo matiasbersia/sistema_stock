@@ -1,0 +1,34 @@
+<div class="cont">
+  <div class="cont_nav">
+    <div class="nav">
+      <button
+        (click)="cambiar_estado('hm')"
+        [ngClass]="{'activo': botonSeleccionado === 'hm'}">
+        Historial de movimientos
+      </button>
+
+      <button
+      class="bot"
+        (click)="cambiar_estado('hp')"
+        [ngClass]="{'activo': botonSeleccionado === 'hp'}">
+        Historial de precios
+      </button>
+
+      <button
+      class="bot"
+        (click)="cambiar_estado('hs')"
+        [ngClass]="{'activo': botonSeleccionado === 'hs'}">
+        Historial de sistema
+      </button>
+    </div>
+  </div>
+
+  <div class="cont_tabla">
+    <app-tabla
+      [columnas]="columnas"
+      [datos]="datos"
+      [boton]="false"
+      class="tabla">
+    </app-tabla>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="cont">
+    <div class="cont_tarjeta">
+        <div class="tarjeta">
+            <div class="cont_nav">
+                <div class="cont_opciones">
+                
+                <button
+  (click)="cargar_estado('crear')"
+  [ngClass]="{'activo': estado === 'crear'}">
+  crear
+</button>
+
+<button
+  (click)="cargar_estado('actualizar')"
+  [ngClass]="{'activo': estado === 'actualizar'}">
+  actualizar
+</button>
+
+<button
+  (click)="cargar_estado('borrar')"
+  [ngClass]="{'activo': estado === 'borrar'}">
+  borrar
+</button>
+
+
+            </div>
+                
+            </div>
+            
+            
+            <div class="cont_main">
+                <div class="cont_tabla">
+                    <div class="cont_p">
+                    <p>{{'categoria: ' +cantidad + '/100'}}</p>
+                </div>
+                <div class="tabla">
+<app-tabla
+                        [boton]="false"
+                        [columnas]="columnasCategoria"
+                        [datos]="datosParaTabla"
+                        class="tabla">
+                    </app-tabla>
+                </div>
+                    
+
+
+                </div>
+                <div class="cont_campos" >
+                        <label for="" *ngIf="estado!='crear'">
+                            Seleccionar Categorías:
+                            <select name="categoria" id="categoria" [(ngModel)]="idCategoriaSeleccionada">
+                                <option *ngFor="let cat of categorias" [value]="cat.id">
+                                {{ cat.nombre }}
+                                </option>
+                            </select>
+                        </label>
+
+                <label for="">
+                    <p *ngIf="estado=='crear'">nombre de categoria:</p>
+                    <p *ngIf="estado=='actualizar'">nuevo nombre:</p>
+                    <input type="text" *ngIf="estado!='borrar'" [(ngModel)]="nombreCategoria">
+                </label>
+                
+                <button *ngIf="estado=='crear'" (click)="crear_categoria()">crear categoria</button>
+                <button *ngIf="estado=='actualizar'" (click)="actualizar_categoria()">actualizar categoria</button>
+                <button *ngIf="estado=='borrar'" (click)="borrar_categoria()">borrar categoria</button>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

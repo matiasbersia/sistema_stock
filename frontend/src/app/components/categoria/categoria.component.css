@@ -1,0 +1,100 @@
+.cont{
+    display: flex;
+    justify-content: center;
+    height: 90%;
+    width: 100%;
+    position: fixed;     
+    top: -20px;
+    left: 150px;
+}
+.cont_tarjeta{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7%;
+    width: 80%;
+    height: 100%;
+    border: 2px solid black;
+}
+.tarjeta{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+.cont_nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+.cont_nav button{
+    width: 5%;
+    height: 30PX;
+    margin: 5PX;
+}
+.cont_p{
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+.cont_p p{
+    font-size: 20px;
+ margin-left:5% ;
+}
+.cont_opciones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+.cont_opciones button{
+    width: 20%;
+    margin: 3% 0px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.cont_opciones button.activo {
+    background-color: rgb(102, 144, 216);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.cont_main{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    
+}
+
+.cont_tabla{
+    width: 60%;
+    border-right: 2px solid black;
+    padding: 0px 5px;
+  
+
+}
+.tabla{
+    height: 45vh;
+    overflow-y: scroll;
+}
+
+.cont_campos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+.texto{
+    margin: 0;
+    color: red;
+}
+.cont_campos button{
+    font-size: 18px;
+    padding: 10px;
+}

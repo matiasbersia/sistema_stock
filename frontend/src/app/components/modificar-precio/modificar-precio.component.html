@@ -1,0 +1,73 @@
+<div class="cont">
+  <div class="cont_tarjeta">
+    <div class="tarjeta">
+      <div class="nav">
+        <div class="cont_boton_cerrar">
+          <button (click)="cerrarComponente()">X</button>
+        </div>
+      </div>
+
+      <div class="main">
+        <!-- Tabla de productos -->
+       
+
+        <!-- Filtros de búsqueda -->
+        <div class="cont_info">
+          
+            <label>
+            Codigo:
+            <input type="text" [(ngModel)]="codigoBuscar" placeholder="Codigo del producto">
+          </label>
+          <label>
+            Nombre:
+            <input type="text" [(ngModel)]="nombreFiltro" placeholder="Nombre del producto">
+          </label>
+
+          <label>
+            Marca:
+            <input type="text" [(ngModel)]="marcaFiltro" placeholder="Marca">
+          </label>
+
+          <label>
+            Seleccionar Categoría:
+            <select [(ngModel)]="idCategoriaSeleccionada">
+              <option [value]="null">Todas</option>
+              <option *ngFor="let cat of categorias" [value]="cat.id">
+                {{ cat.nombre }}
+              </option>
+            </select>
+          </label>
+
+          <div class="cont_boton">
+            <button (click)="buscarProductos()">Buscar</button>
+          </div>
+        </div>
+        <div>
+          <div class="cont_nose">
+            <div class="cont_tabla">
+          <app-tabla
+            [boton]="false"
+            [columnas]="columnas"
+            [datos]="datos"
+            class="tabla">
+          </app-tabla>
+          
+        </div>
+        <div class="cont_modificar">
+            <div class="modificar">
+              <label for="">
+                porsentaje a modificar
+                <input type="number">
+                <span>%</span>
+              </label>
+              <div class="cont_boton_m">
+                <button>aceptar</button>
+              </div>
+            </div>
+          </div>
+          </div>
+         
+      </div>
+    </div>
+  </div>
+</div>

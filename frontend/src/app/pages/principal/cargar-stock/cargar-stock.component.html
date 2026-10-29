@@ -1,0 +1,152 @@
+<!-- Barra de navegación afuera del contenedor -->
+<div class="cont_nav">
+  <div class="nav">
+    <button (click)="cambiar_estado('cargar');cerrar_buscar()" [ngClass]="{'activo': botonSeleccionado === 'cargar'}">
+        cargar/crear
+    </button>
+    <button (click)="cambiar_estado('borrar');cerrar_buscar() "  [ngClass]="{'activo': botonSeleccionado === 'borrar'}">
+        borrar
+    </button>
+    <button (click)="boton_buscar()" [ngClass]="{'activo': botonSeleccionado === 'buscar'}">
+        buscar
+    </button>
+
+
+    <button (click)="boton_categoria();cerrar_buscar()" [ngClass]="{'activo': botonSeleccionado === 'categoria'}">
+        categorias
+    </button>
+  </div>
+</div>
+
+<!-- Contenedor principal -->
+<div class="cont">
+
+  <!-- Componentes condicionales -->
+  <app-categoria
+  *ngIf="estado_categoria"
+  (cerrarCategoria)="cerrar_categoria($event)">
+</app-categoria>
+
+<app-buscar-producto
+  *ngIf="estado_buscar">
+</app-buscar-producto>
+
+<app-modificar-precio
+  *ngIf="estado_modificar"
+  (cerrarModificar)="cerrar_modificar($event)">
+</app-modificar-precio>
+
+
+  <!-- Formulario de carga -->
+<div class="cont_cargar">
+  <div class="cargar">
+
+    <label>
+      código:
+      <div class="cont_input ">
+        <input
+          class="int_boton"
+          type="text"
+          [(ngModel)]="codigo"
+          #codigoInput
+          (keydown.enter)="cargar_un_producto()"
+          autofocus
+        >
+        <button (click)="cargar_un_producto();ponerFocusCodigo()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M14 6l-6 6l6 6v-12"/>
+          </svg>
+        </button>
+      </div>
+    </label>
+
+    <label>
+      nombre:
+      <input class="inp" type="text" [(ngModel)]="nombre">
+    </label>
+
+    <label>
+      marca:
+      <input class="inp" type="text" [(ngModel)]="marca">
+    </label>
+
+    <label>
+      precio actual:
+      <input class="inp" type="number" [(ngModel)]="precio_actual">
+    </label>
+
+    <label>
+      stock actual:
+      <input class="inp" type="number" [(ngModel)]="stock" disabled>
+    </label>
+
+      <label>
+      cargar stock:
+      <input class="inp" type="number" [(ngModel)]="stock_cargar">
+    </label>
+
+    <label>
+      Seleccionar Categoría:
+      <div class="cont_input ">
+        <select class="int_boton" [(ngModel)]="categoriaSeleccionada">
+          <option *ngFor="let cat of categoriasDisponibles" [value]="cat.id">
+            {{ cat.nombre }}
+          </option>
+        </select>
+        <button type="button" (click)="agregarCategoria()">+</button>
+      </div>
+    </label>
+
+    <label>
+      Vencimiento:
+      <input
+        class="inp"
+        type="date"
+        [(ngModel)]="vencimientoInput"
+        (ngModelChange)="actualizarVencimiento($event)"
+      >
+    </label>
+    <div class="cont_botones">
+      <button *ngIf="estado=='cargar'" (click)="crear_producto();ponerFocusCodigo()" >
+      cargar
+    </button>
+    <button *ngIf="estado=='borrar'" (click)="borrar_producto();ponerFocusCodigo()" >
+      borrar
+    </button>
+    </div>
+    
+
+  </div>
+</div>
+
+
+  <!-- Tabla de categorías -->
+  <!-- Tabla de categorías -->
+<div class="cont_tabla_categoria">
+  <div class="tabla_categoria">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre categoría</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cat of categorias_lista; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ cat.nombre }}</td>
+          <td>
+            <button (click)="eliminarCategoria(i)" >Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+</div>
