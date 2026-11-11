@@ -1,7 +1,10 @@
-name = "tu-proyecto-worker"
-main = "src/index.js"
+name = "sistema-stock"
+main = "src/app.js"           # <-- Acá le indicas que está dentro de src/
 compatibility_date = "2026-01-01"
 
-# Configuración del envío semanal (Lunes a las 00:00 hora Argentina / 03:00 UTC)
+# Desactiva el autodetect de Cloudflare para evitar el error anterior
+[build]
+command = "" 
+
 [triggers]
 crons = ["0 3 * * 1"]
