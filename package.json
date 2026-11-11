@@ -2,6 +2,7 @@
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^18.0.9",
+    "hono": "^4.13.17",
     "mysql2": "^3.16.1",
     "node-cron": "^4.2.1",
     "nodemailer": "^7.0.13",

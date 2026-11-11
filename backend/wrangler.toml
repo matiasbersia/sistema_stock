@@ -1,0 +1,7 @@
+name = "tu-proyecto-worker"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Configuración del envío semanal (Lunes a las 00:00 hora Argentina / 03:00 UTC)
+[triggers]
+crons = ["0 3 * * 1"]
