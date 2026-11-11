@@ -1,9 +1,0 @@
-name = "sistema-stock"
-main = "src/app.js"
-compatibility_date = "2026-01-01"
-
-[build]
-command = ""
-
-[triggers]
-crons = ["0 3 * * 1"]
