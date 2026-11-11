@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 
 const express = require('express');
@@ -14,8 +13,8 @@ app.use(express.json());
 app.use('/', Routes);
 
 // ====================== CONFIGURACIÓN ======================
-const DIA_SEMANAL = 1;          // 1 = Lunes, 2 = Martes, ..., 7 = Domingo
-const HORA_ENVIO = "00:00";     // Formato HH:MM (24 horas)
+const DIA_SEMANAL = 1;        // 1 = Lunes, 2 = Martes, ..., 7 = Domingo
+const HORA_ENVIO = "00:00";    // Formato HH:MM (24 horas)
 // ============================================================
 
 // Convertir hora en minutos y horas
