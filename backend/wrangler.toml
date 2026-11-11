@@ -1,10 +1,9 @@
 name = "sistema-stock"
-main = "src/app.js"           # <-- Acá le indicas que está dentro de src/
+main = "src/app.js"
 compatibility_date = "2026-01-01"
 
-# Desactiva el autodetect de Cloudflare para evitar el error anterior
 [build]
-command = "" 
+command = ""
 
 [triggers]
 crons = ["0 3 * * 1"]
